@@ -44,7 +44,7 @@ const questions = [
       {
         type: 'input',
         message: 'What should someone do if a question about this project arrises?',
-        name: 'question',
+        name: 'questions',
       },
       {
         type: 'input',

@@ -1,5 +1,6 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 
+// TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   if( license === 'BSD' ) {
@@ -10,12 +11,8 @@ function renderLicenseBadge(license) {
     return `[![License: IPL 1.0](https://img.shields.io/badge/License-IPL%201.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)`
   } else if ( license === `GNU`) {
     return `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)`
-  }
+  } 
 }
-
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
@@ -24,11 +21,13 @@ function renderLicenseSection(license) {
 This project is governed by this license: ${license}`
 }
 
+// built header function
 function buildHeader(text) {
   return `
 ## ${text}`
 }
 
+// build TOC items function
 function renderTOCItem(title) {
     return `
 * [${title}](#${title.toLowerCase()})`
@@ -46,36 +45,59 @@ finalMarkdown += renderLicenseSection(data.license);
 finalMarkdown += buildHeader("Description");
  
 //build description content
-
+if (data.description) { 
+  finalMarkdown += `
+  ${data.description}`
+}
 
 // build toc header
 finalMarkdown += buildHeader("Table of Contents");
 
 
   // for each item the user gave an answer for, create a toc item
-  if (data.Installation !== '') { 
-    renderTOCItem("Installation")
+  if (data.installation) { 
+    finalMarkdown += renderTOCItem("Installation")
   }
-  if (data.Usage) {
-    renderTOCItem("Usage")
+  if (data.usage) {
+    finalMarkdown += renderTOCItem("Usage")
   }
-  if (data.License) {
-    renderTOCItem("License")
+  if (data.license) {
+    finalMarkdown += renderTOCItem("License")
   }
-  if (data.Contributing) {
-    renderTOCItem("Contributing")
+  if (data.contributing) {
+    finalMarkdown += renderTOCItem("Contributing")
   }
-  if (data.Tests) {
-    renderTOCItem("Tests")
+  if (data.tests) {
+    finalMarkdown += renderTOCItem("Tests")
   }
-  if (data.Questions) {
-    renderTOCItem("Questions")
+  if (data.questions) {
+    finalMarkdown += renderTOCItem("Questions")
   }
 
   // build each individual section, only for the ones the user gave info for
-  if (data.Installation) {
+  if (data.installation) {
     finalMarkdown += `## Installation
-${data.Installation}`
+${data.installation}`
+  }
+  if (data.usage) {
+    finalMarkdown += `## Usage
+${data.usage}`
+  }
+  if (data.license) {
+    finalMarkdown += `## License
+${data.license}`
+  }
+  if (data.contributing) {
+    finalMarkdown += `## Contributing
+${data.contributing}`
+  }
+  if (data.tests) {
+    finalMarkdown += `## Tests
+${data.tests}`
+  }
+  if (data.questions) {
+    finalMarkdown += `## Questions
+${data.questions}`
   }
   
   
