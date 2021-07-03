@@ -5,39 +5,64 @@ const generateMarkdown = require("./utils/generateMarkdown");
 
 // TODO: Create an array of questions for user input
 const questions = [
-    {
+      {
         type: 'input',
-        message: 'What is your name?',
-        name: 'name',
+        message: 'What is the project title?',
+        name: 'title',
       },
       {
         type: 'input',
-        message: 'What is your favorite animal?',
-        name: 'animal',
+        message: 'Enter a brief description of your project:',
+        name: 'description',
+      },
+      {
+        type: 'input',
+        message: 'What is the installation process?',
+        name: 'installation',
+      },
+      {
+        type: 'input',
+        message: 'What is the usage for this project?',
+        name: 'usage',
       },
       {
         type: 'list',
-        message: 'What is your favorite color?',
-        name: 'color',
-        choices: ['green', 'blue', 'purple', 'red']
+        message: 'What license does this project use?',
+        name: 'license',
+        choices: ['BSD', 'MIT', 'IBM', 'GNU']
       },
       {
-        type: 'list',
-        message: 'What is your favorite season?',
-        name: 'season',
-        choices: ['winter', 'summer', 'spring', 'fall']
+        type: 'input',
+        message: 'Who are the contributors of this project?',
+        name: 'contributing',
       },
       {
-        type: 'checkbox',
-        message: 'Which pets do you like?',
-        name: 'pets',
-        choices: ['dog', 'cat', 'bunny', 'bird']
+        type: 'input',
+        message: 'What tests are included?',
+        name: 'tests',
+      },
+      {
+        type: 'input',
+        message: 'What should someone do if a question about this project arrises?',
+        name: 'question',
+      },
+      {
+        type: 'input',
+        message: 'What is your GitHub username?',
+        name: 'githubUsername',
+      },
+      {
+        type: 'input',
+        message: 'What is your email?',
+        name: 'email',
       },
 ];
 
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(title, data) {
+
+}
 
 // TODO: Create a function to initialize app
 function init() {
