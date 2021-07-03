@@ -46,32 +46,29 @@ finalMarkdown += renderLicenseSection(data.license);
 finalMarkdown += buildHeader("Description");
  
 //build description content
-if (data.description !== '') {
-  return `
-${data.description}`
-}
+
 
 // build toc header
 finalMarkdown += buildHeader("Table of Contents");
-// var TOC = 
+
 
   // for each item the user gave an answer for, create a toc item
-  if (data.installation) {
+  if (data.Installation !== '') { 
     renderTOCItem("Installation")
   }
-  if (data.usage) {
+  if (data.Usage) {
     renderTOCItem("Usage")
   }
-  if (data.license) {
+  if (data.License) {
     renderTOCItem("License")
   }
-  if (data.contributing) {
+  if (data.Contributing) {
     renderTOCItem("Contributing")
   }
-  if (data.tests) {
+  if (data.Tests) {
     renderTOCItem("Tests")
   }
-  if (data.questions) {
+  if (data.Questions) {
     renderTOCItem("Questions")
   }
 
