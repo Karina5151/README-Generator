@@ -11,14 +11,20 @@ function renderLicenseBadge(license) {
     return `[![License: IPL 1.0](https://img.shields.io/badge/License-IPL%201.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)`
   } else if ( license === `GNU`) {
     return `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)`
-  } 
+  } else if (license === '') {
+    return ``
+  }
 }
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  return `
-This project is governed by this license: ${license}`
+  if (license != '') {
+    return `
+This project is governed by the license: ${license}`
+  } else if (license === '') {
+    return ``
+  }
 }
 
 // built header function
@@ -35,12 +41,16 @@ function renderTOCItem(title) {
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  var finalMarkdown = `# ${data.title} `;
+  var finalMarkdown = `# ${data.title}
+`;
   
 // build badge area
-finalMarkdown += renderLicenseBadge(data.license);
-finalMarkdown += renderLicenseSection(data.license);
+finalMarkdown += `${renderLicenseBadge(data.license)}  `
+finalMarkdown += `![Repo size badge](https://img.shields.io/github/repo-size/${data.gitHubUsername}/${data.title})  `
+finalMarkdown += `![Language % badge](https://img.shields.io/github/languages/top/${data.gitHubUsername}/${data.title})  `
 
+// https://img.shields.io/github/repo-size/Karina5151/hw9-README-Generator
+// https://img.shields.io/github/languages/top/Karina5151/hw9-README-Generator
 // build description header
 finalMarkdown += buildHeader("Description");
  
@@ -74,33 +84,42 @@ finalMarkdown += buildHeader("Table of Contents");
     finalMarkdown += renderTOCItem("Questions")
   }
 
+  finalMarkdown += `
+  
+  `
+
   // build each individual section, only for the ones the user gave info for
   if (data.installation) {
-    finalMarkdown += `## Installation
-${data.installation}`
+    finalMarkdown += `
+## Installation
+${data.installation}
+`
   }
   if (data.usage) {
     finalMarkdown += `## Usage
-${data.usage}`
+${data.usage}
+`
   }
   if (data.license) {
     finalMarkdown += `## License
-${data.license}`
+${renderLicenseSection(data.license)}
+`
   }
   if (data.contributing) {
     finalMarkdown += `## Contributing
-${data.contributing}`
+${data.contributing}
+`
   }
   if (data.tests) {
     finalMarkdown += `## Tests
-${data.tests}`
+${data.tests}
+`
   }
   if (data.questions) {
     finalMarkdown += `## Questions
-${data.questions}`
+${data.questions}
+`
   }
-  
-  
   
   return finalMarkdown;
 }
