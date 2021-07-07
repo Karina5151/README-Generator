@@ -43,13 +43,13 @@ const questions = [
       },
       {
         type: 'input',
-        message: 'What should someone do if a question about this project arrises?',
-        name: 'questions',
+        message: 'What is your GitHub username?',
+        name: 'gitHubUsername',
       },
       {
         type: 'input',
-        message: 'What is your GitHub username?',
-        name: 'githubUsername',
+        message: 'What is the project repo name in GitHub?',
+        name: 'repo',
       },
       {
         type: 'input',

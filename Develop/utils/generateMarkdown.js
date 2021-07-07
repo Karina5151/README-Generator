@@ -45,12 +45,13 @@ function generateMarkdown(data) {
 `;
   
 // build badge area
-finalMarkdown += `${renderLicenseBadge(data.license)}  `
-finalMarkdown += `![Repo size badge](https://img.shields.io/github/repo-size/${data.gitHubUsername}/${data.title})  `
-finalMarkdown += `![Language % badge](https://img.shields.io/github/languages/top/${data.gitHubUsername}/${data.title})  `
+finalMarkdown += `${renderLicenseBadge(data.license)} &nbsp;&nbsp;&nbsp;&nbsp;`
 
-// https://img.shields.io/github/repo-size/Karina5151/hw9-README-Generator
-// https://img.shields.io/github/languages/top/Karina5151/hw9-README-Generator
+finalMarkdown += `![Repo size badge](https://img.shields.io/github/repo-size/${data.gitHubUsername}/${data.repo}?color=success) &nbsp;&nbsp;&nbsp;&nbsp;`
+
+finalMarkdown += `![Language % badge](https://img.shields.io/github/languages/top/${data.gitHubUsername}/${data.repo}) &nbsp;&nbsp;&nbsp;&nbsp;`
+
+
 // build description header
 finalMarkdown += buildHeader("Description");
  
@@ -91,6 +92,7 @@ finalMarkdown += buildHeader("Table of Contents");
   // build each individual section, only for the ones the user gave info for
   if (data.installation) {
     finalMarkdown += `
+
 ## Installation
 ${data.installation}
 `
@@ -115,9 +117,20 @@ ${data.contributing}
 ${data.tests}
 `
   }
-  if (data.questions) {
-    finalMarkdown += `## Questions
-${data.questions}
+  if (data.gitHubUsername) {
+    finalMarkdown += `
+ ---
+
+ ## Questions
+
+For any questions, please contact me using the information below:
+
+GitHub: [@${data.gitHubUsername}](https://github.com/${data.gitHubUsername})
+`
+  }
+  if (data.email) {
+    finalMarkdown += `
+Email: ${data.email}
 `
   }
   
