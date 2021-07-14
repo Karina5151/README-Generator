@@ -53,7 +53,7 @@ finalMarkdown += `![Language % badge](https://img.shields.io/github/languages/to
 
 
 // build description header
-finalMarkdown += buildHeader("Description");
+finalMarkdown += buildHeader(":memo: Description");
  
 //build description content
 if (data.description) { 
@@ -62,7 +62,7 @@ if (data.description) {
 }
 
 // build toc header
-finalMarkdown += buildHeader("Table of Contents");
+finalMarkdown += buildHeader(":trophy: Table of Contents");
 
 
   // for each item the user gave an answer for, create a toc item
@@ -93,27 +93,27 @@ finalMarkdown += buildHeader("Table of Contents");
   if (data.installation) {
     finalMarkdown += `
 
-## Installation
+## :floppy_disk: Installation
 ${data.installation}
 `
   }
   if (data.usage) {
-    finalMarkdown += `## Usage
+    finalMarkdown += `## :key: Usage
 ${data.usage}
 `
   }
   if (data.license) {
-    finalMarkdown += `## License
+    finalMarkdown += `## :globe_with_meridians: License
 ${renderLicenseSection(data.license)}
 `
   }
   if (data.contributing) {
-    finalMarkdown += `## Contributing
+    finalMarkdown += `## :star2: Contributing
 ${data.contributing}
 `
   }
   if (data.tests) {
-    finalMarkdown += `## Tests
+    finalMarkdown += `:white_check_mark: ## Tests
 ${data.tests}
 `
   }
@@ -121,16 +121,16 @@ ${data.tests}
     finalMarkdown += `
  ---
 
- ## Questions
+ ## :question: Questions
 
 For any questions, please contact me using the information below:
 
-GitHub: [@${data.gitHubUsername}](https://github.com/${data.gitHubUsername})
+:octocat: GitHub: [@${data.gitHubUsername}](https://github.com/${data.gitHubUsername})
 `
   }
   if (data.email) {
     finalMarkdown += `
-Email: ${data.email}
+    :envelope: Email: ${data.email}
 `
   }
   
