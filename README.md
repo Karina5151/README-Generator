@@ -19,7 +19,7 @@
 ## Usage
 To generate a `README.md` file for the user’s specific project using command-line prompts upon running `node index.js` in the terminal.
 
-  Launch example README file [here](https://github.com/Karina5151/README_Generator/blob/main/README.md)
+  Launch example README file [here](https://karina5151.github.io/README_Generator/)
   
   <a href="https://drive.google.com/file/d/1klP56lTJKiY6KKd6-DmZGUmv62cu7NTZ/view?usp=sharing" rel="nofollow" target="_blank">Click here for the full screen demo</a>
 
