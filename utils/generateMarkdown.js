@@ -93,27 +93,27 @@ finalMarkdown += buildHeader(":trophy: Table of Contents");
   if (data.installation) {
     finalMarkdown += `
 
-## :floppy_disk: Installation
+## Installation
 ${data.installation}
 `
   }
   if (data.usage) {
-    finalMarkdown += `## :key: Usage
+    finalMarkdown += `## Usage
 ${data.usage}
 `
   }
   if (data.license) {
-    finalMarkdown += `## :globe_with_meridians: License
+    finalMarkdown += `## License
 ${renderLicenseSection(data.license)}
 `
   }
   if (data.contributing) {
-    finalMarkdown += `## :star2: Contributing
+    finalMarkdown += `## Contributing
 ${data.contributing}
 `
   }
   if (data.tests) {
-    finalMarkdown += `:white_check_mark: ## Tests
+    finalMarkdown += `## Tests
 ${data.tests}
 `
   }
@@ -130,7 +130,7 @@ For any questions, please contact me using the information below:
   }
   if (data.email) {
     finalMarkdown += `
-    :envelope: Email: ${data.email}
+:envelope: Email: ${data.email}
 `
   }
   
