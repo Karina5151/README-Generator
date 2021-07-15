@@ -97,31 +97,46 @@ finalMarkdown += buildHeader(":trophy: Table of Contents");
 ${data.installation}
 `
   }
+  finalMarkdown += `
+  
+  `
   if (data.usage) {
-    finalMarkdown += `## Usage
+  finalMarkdown += `## Usage
 ${data.usage}
 `
   }
+  finalMarkdown += `
+  
+  `
   if (data.license) {
-    finalMarkdown += `## License
+  finalMarkdown += `## License
 ${renderLicenseSection(data.license)}
 `
   }
+  finalMarkdown += `
+  
+  `
   if (data.contributing) {
-    finalMarkdown += `## Contributing
+  finalMarkdown += `## Contributing
 ${data.contributing}
 `
   }
+  finalMarkdown += `
+  
+  `
   if (data.tests) {
-    finalMarkdown += `## Tests
+  finalMarkdown += `## Tests
 ${data.tests}
 `
   }
+  finalMarkdown += `
+  
+  `
   if (data.gitHubUsername) {
-    finalMarkdown += `
+  finalMarkdown += `
  ---
 
- ## :question: Questions
+## :question: Questions
 
 For any questions, please contact me using the information below:
 
@@ -129,7 +144,7 @@ For any questions, please contact me using the information below:
 `
   }
   if (data.email) {
-    finalMarkdown += `
+  finalMarkdown += `
 :envelope: Email: ${data.email}
 `
   }
